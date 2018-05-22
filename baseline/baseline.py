@@ -11,9 +11,39 @@ df = pd.read_csv(dataset_url, header=0, parse_dates=[0], index_col=0, squeeze=Tr
 df['a1'].plot()
 pyplot.show()
 
-X = df['a1'].values
+X = []
 
-n = X.size
+msk = np.random.rand(len(df)) < 0.8
+train = df[msk]
+test = df[~msk]
+
+
+for i in range(1,9) :
+    s = 'a' +str(i)
+    #print s
+    X.append(df[s].values)
+
+l = 0
+print len(X)
+for i in range (0 ,len(X)):
+
+		for j in range (1,(X[i].size) - 1) :
+		    #print j
+		    if X[i][j] < 2 :
+			    l = l + 1
+			    X[i][j] =  ( X[i][j - 1] )
+
+
+
+for i in range (0 ,len(X)  ) :
+    print i
+    pyplot.figure(i)
+    pyplot.plot(X[i], label='Value')
+
+pyplot.legend(['data', 'linear', 'cubic'], loc='best')
+pyplot.show()
+
+n = len(X)
 test_size = int(0.2*n)
 print test_size
 train, test = X[0:-test_size], X[-test_size:] #12 taye akhar ro migire test
