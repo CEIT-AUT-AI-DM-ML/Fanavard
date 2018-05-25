@@ -1,4 +1,3 @@
-import pandas as pd
 from matplotlib import pyplot
 import numpy as np
 from sklearn.metrics import mean_squared_error
@@ -16,7 +15,7 @@ class baseLineModel :
     def baseLine(self):
 
         #read data from dataset
-        self.dataset_url = 'C:/Users/monireh.s/Desktop/A_ticker.csv'
+        self.dataset_url = '../data/A_ticker.csv'
         self.df = pd.read_csv(self.dataset_url, header=0, parse_dates=[0], index_col=0, squeeze=True)
 
         # add features to X
@@ -35,15 +34,16 @@ class baseLineModel :
 
 
         # plot data after removing outliers
-        for i in range (0 ,len(X)  ) :
-            # print (i)
-            pyplot.figure(i)
-            pyplot.plot(X[i], label='Value')
-        pyplot.show()
+        # for i in range (0 ,len(X)  ) :
+        #     # print (i)
+        #     pyplot.figure(i)
+        #     pyplot.plot(X[i], label='Value')
+        # pyplot.show()
 
 
         # set train and test randomly (using featuer a1)
         msk = np.random.rand(len(self.df['a1'])) < 0.8
+        print msk
         train = X[0][msk]
         test = X[0][~msk]
 
@@ -84,8 +84,8 @@ class baseLineModel :
         print('RMSE: %.3f' % rmse)
 
         # line plot of observed vs predicted
-        pyplot.plot(test[-200:], label = 'Expected Value')
-        pyplot.plot(predictions[-200:], label = 'Predicted Value')
+        pyplot.plot(test[-100:], label = 'Expected Value')
+        pyplot.plot(predictions[-100:], label = 'Predicted Value')
         pyplot.legend()
         pyplot.show()
 
