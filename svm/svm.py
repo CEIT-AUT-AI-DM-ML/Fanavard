@@ -42,16 +42,24 @@ class SvmModel :
                     if X[i][j] < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
+        d = self.df[['a1', 'a6']]
+
         msk = np.random.rand(len(self.df['a1'])) < 0.8
         err = []
+
         #for step in range(1, 10):
-        step = 2
+        step = 1
+        numbeOfFetures = 2
         #print step
-        supervised = timeseries_to_supervised(X[0], step)
+        supervised = timeseries_to_supervised(d, step)
+        print supervised
         supervised_values = supervised.values
 
-        x = supervised_values[:, :step]
-        y = supervised_values[:, step]
+        x = supervised_values[:, :step*numbeOfFetures]
+        y = supervised_values[:, step*numbeOfFetures]
+
+        print x
+        print y
 
         # set train and test randomly (using featuer a1)
 
@@ -89,8 +97,8 @@ class SvmModel :
 
 
         #line plot of observed vs predicted
-        pyplot.plot(y_test, label='Expected Value')
-        pyplot.plot(predictions, label='Predicted Value')
+        pyplot.plot(y_test[-100:], label='Expected Value')
+        pyplot.plot(predictions[-100:], label='Predicted Value')
         #pyplot.plot(err, label='rmse')
         pyplot.legend()
         pyplot.show()
