@@ -32,6 +32,10 @@ class baseLineModel :
                     if X[i][j] < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
+        # smooth data
+        for i in range(0, len(X)):
+            for j in range(1, (X[i].size) - 1):
+                X[i][j] = (X[i][j - 1] + X[i][j] + X[i][j + 1]) / 3
 
         # plot data after removing outliers
         # for i in range (0 ,len(X)  ) :
@@ -43,7 +47,7 @@ class baseLineModel :
 
         # set train and test randomly (using featuer a1)
         msk = np.random.rand(len(self.df['a1'])) < 0.8
-        print msk
+        #print msk
         train = X[0][msk]
         test = X[0][~msk]
 
