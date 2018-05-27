@@ -42,24 +42,31 @@ class SvmModel :
                     if X[i][j] < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
-        d = self.df[['a1', 'a6']]
+        #smooth data
+        for i in range(0, len(X)):
+            for j in range(1, (X[i].size) - 1):
+                X[i][j] = (X[i][j - 1] + X[i][j] + X[i][j + 1]) / 3
+
+        d = self.df[['a1']]
 
         msk = np.random.rand(len(self.df['a1'])) < 0.8
         err = []
 
+
+
         #for step in range(1, 10):
         step = 1
-        numbeOfFetures = 2
+        numbeOfFetures = 1
         #print step
         supervised = timeseries_to_supervised(d, step)
-        print supervised
+#        print supervised
         supervised_values = supervised.values
 
         x = supervised_values[:, :step*numbeOfFetures]
         y = supervised_values[:, step*numbeOfFetures]
 
-        print x
-        print y
+ #       print x
+  #      print y
 
         # set train and test randomly (using featuer a1)
 
@@ -93,7 +100,7 @@ class SvmModel :
         predictions = clf.predict(x_test)
         rmse = sqrt(mean_squared_error(y_test, predictions))
         err.append(rmse)
-        print rmse
+        print (rmse)
 
 
         #line plot of observed vs predicted
