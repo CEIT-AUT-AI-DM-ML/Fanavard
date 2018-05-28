@@ -52,15 +52,31 @@ X_train = x[msk]
 y_train = y[msk]
 X_test = x[~msk]
 y_test = y[~msk]
-# create linear regression object
-reg = linear_model.LinearRegression()
 
-# train the model using the training sets
-reg.fit(X_train, y_train)
-predictions = reg.predict(X_test)
+# make multi line
+size = X_train.size
+size_slot = size/10
+x_train_new = []
+y_train_new = []
+for i in range(0,10):
+    # for each group
+    j = int(i * size_slot)
+    while j<size_slot:
+        x_train_new.append(X_train[j])
+        y_train_new.append(y_train[j])
+        j += 1
+    reg = linear_model.LinearRegression()
+    reg.fit(x_train_new, y_train_new)
+    predictions = reg.predict(X_test)
+    rmse = sqrt(mean_squared_error(y_test, predictions))
+    print("rmse "+str(i)+": \n",rmse)
+    plt.plot(y_test, label='Expected Value')
+    plt.plot(predictions, label='Predicted Value')
 
-rmse = sqrt(mean_squared_error(y_test, predictions))
-print("rmse : \n",rmse)
+    plt.show()
+
+
+
 
 # # regression coefficients
 # print('Coefficients: \n', reg.coef_)
@@ -79,10 +95,5 @@ print("rmse : \n",rmse)
 #
 # plt.show()
 
-plt.plot(y_test, label='Expected Value')
-plt.plot(predictions, label='Predicted Value')
-# pyplot.plot(err, label='rmse')
-plt.legend()
-plt.show()
 
 
