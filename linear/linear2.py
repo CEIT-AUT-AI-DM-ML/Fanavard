@@ -12,17 +12,17 @@ def timeseries_to_supervised(data, lag=1):
     columns = [df.shift(i) for i in range(1, lag + 1)]
     columns.append(df)
     df = pd.concat(columns, axis=1)
-    df.fillna(0, inplace=True)
+    df.fillna(80, inplace=True)
     return df
 
 
 # read data from dataset
-dataset_url = 'A_ticker.csv'
+dataset_url = '../data/B_ticker.csv'
 df = pd.read_csv(dataset_url, header=0, parse_dates=[0], index_col=0, squeeze=True)
 
 X = []
 for i in range(1,9) :
-    s = 'a' +str(i)
+    s = 'b' +str(i)
     #print s
     X.append(df[s].values)
 
@@ -33,10 +33,10 @@ for i in range (0 ,len(X)):
             if X[i][j] < 2 :
                 X[i][j] =  ( X[i][j - 1] )
 
-msk = np.random.rand(len(df['a1'])) < 0.8
+msk = np.random.rand(len(df['b1'])) < 0.8
 err = []
 #for step in range(1, 10):
-step = 2
+step = 1
 #print step
 
 #chaneg time serie to supervise
@@ -56,7 +56,7 @@ y_test = y[~msk]
 reg = linear_model.LinearRegression()
 
 # train the model using the training sets
-reg.fit(X_train, y_train)
+reg.fit(X_train[1:], y_train[1:])
 predictions = reg.predict(X_test)
 
 rmse = sqrt(mean_squared_error(y_test, predictions))
@@ -79,10 +79,13 @@ print("rmse : \n",rmse)
 #
 # plt.show()
 
-plt.plot(y_test, label='Expected Value')
-plt.plot(predictions, label='Predicted Value')
-# pyplot.plot(err, label='rmse')
-plt.legend()
+# plt.plot(y_test, label='Expected Value')
+# plt.plot(predictions, label='Predicted Value')
+# # pyplot.plot(err, label='rmse')
+# plt.legend()
+# plt.show()
+
+plt.plot(X_train, y_train, 'o')
+#plt.plot(X_train[1:], y_train[1:], 'o')
+#plt.legend()
 plt.show()
-
-

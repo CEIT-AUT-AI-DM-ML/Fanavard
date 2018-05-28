@@ -3,8 +3,17 @@ import numpy as np
 from sklearn.metrics import mean_squared_error
 from math import sqrt
 import pandas as pd
+from pandas import DataFrame
+from pandas import concat
 
-
+# frame a sequence as a supervised learning problem
+def timeseries_to_supervised(data, lag=1):
+    df = DataFrame(data)
+    columns = [df.shift(i) for i in range(1, lag + 1)]
+    columns.append(df)
+    df = concat(columns, axis=1)
+    df.fillna(77, inplace=True)
+    return df
 
 class baseLineModel :
 
@@ -15,13 +24,13 @@ class baseLineModel :
     def baseLine(self):
 
         #read data from dataset
-        self.dataset_url = '../data/A_ticker.csv'
+        self.dataset_url = '../data/B_ticker.csv'
         self.df = pd.read_csv(self.dataset_url, header=0, parse_dates=[0], index_col=0, squeeze=True)
 
         # add features to X
         X = []
         for i in range(1,9) :
-            s = 'a' +str(i)
+            s = 'b' +str(i)
             #print s
             X.append(self.df[s].values)
 
@@ -32,11 +41,29 @@ class baseLineModel :
                     if X[i][j] < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
-        # smooth data
-        for i in range(0, len(X)):
-            for j in range(1, (X[i].size) - 1):
-                X[i][j] = (X[i][j - 1] + X[i][j] + X[i][j + 1]) / 3
+        # set train and test randomly (using featuer a1)
+        msk = np.random.rand(len(self.df['b1'])) < 0.8
+        # print msk
+        test = X[0][~msk]
+        # # smooth data
+        # for i in range(0, len(X)):
+        #     for j in range(1, (X[i].size) - 1):
+        #         X[i][j] = (X[i][j - 1] + X[i][j] + X[i][j + 1]) / 3
 
+        train = X[0][msk]
+
+        supervised = timeseries_to_supervised(X[0], 1)
+        supervised_values = supervised.values
+        print supervised_values
+
+        x = supervised_values[:, :1]
+        y = supervised_values[:, 1]
+
+        x_train = x[msk]
+        y_train = y[msk]
+
+        pyplot.plot(x_train,y_train,'o')
+        pyplot.show()
         # plot data after removing outliers
         # for i in range (0 ,len(X)  ) :
         #     # print (i)
@@ -45,11 +72,7 @@ class baseLineModel :
         # pyplot.show()
 
 
-        # set train and test randomly (using featuer a1)
-        msk = np.random.rand(len(self.df['a1'])) < 0.8
-        #print msk
-        train = X[0][msk]
-        test = X[0][~msk]
+
 
         # print (train)
         # print(len(train))
@@ -91,6 +114,9 @@ class baseLineModel :
         pyplot.plot(test[-100:], label = 'Expected Value')
         pyplot.plot(predictions[-100:], label = 'Predicted Value')
         pyplot.legend()
+        pyplot.show()
+
+        pyplot.plot(train);
         pyplot.show()
 
 if __name__ == "__main__":

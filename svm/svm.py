@@ -13,7 +13,7 @@ def timeseries_to_supervised(data, lag=1):
     columns = [df.shift(i) for i in range(1, lag + 1)]
     columns.append(df)
     df = concat(columns, axis=1)
-    df.fillna(0, inplace=True)
+    df.fillna(77, inplace=True)
     return df
 class SvmModel :
 
@@ -42,11 +42,6 @@ class SvmModel :
                     if X[i][j] < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
-        #smooth data
-        for i in range(0, len(X)):
-            for j in range(1, (X[i].size) - 1):
-                X[i][j] = (X[i][j - 1] + X[i][j] + X[i][j + 1]) / 3
-
         d = self.df[['a1']]
 
         msk = np.random.rand(len(self.df['a1'])) < 0.8
@@ -69,11 +64,22 @@ class SvmModel :
   #      print y
 
         # set train and test randomly (using featuer a1)
+        x_test = x[~msk]
+        y_test = y[~msk]
+
+        # smooth data
+        for i in range(0, len(X)):
+            for j in range(1, (X[i].size) - 1):
+                X[i][j] = (X[i][j - 1] + X[i][j] + X[i][j + 1]) / 3
+
+        supervised = timeseries_to_supervised(X[0], step)
+        supervised_values = supervised.values
+
+        x = supervised_values[:, :step * numbeOfFetures]
+        y = supervised_values[:, step * numbeOfFetures]
 
         x_train = x[msk]
         y_train = y[msk]
-        x_test = x[~msk]
-        y_test = y[~msk]
 
         # we create an instance of SVM and fit out data. We do not scale our
         # data since we want to plot the support vectors
@@ -102,6 +108,10 @@ class SvmModel :
         err.append(rmse)
         print (rmse)
 
+        p = clf.predict(x_train)
+        pyplot.plot(x_train, label='expected')
+        pyplot.plot(p, label='predicted')
+        pyplot.show()
 
         #line plot of observed vs predicted
         pyplot.plot(y_test[-100:], label='Expected Value')
