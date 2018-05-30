@@ -47,102 +47,103 @@ class baseLineModel :
         svmErr = []
         linearSvmErr = []
         linearErr = []
-        for k in range(20):
-            print k
+        # for k in range(20):
+        #     print k
+        #     # set train and test randomly (using featuer a1)
+        #     msk = np.random.rand(len(self.df['a1'])) < 0.8
+        #     train = X[0][msk]
+        #     test = X[0][~msk]
+        #
+        #
+        #     # baseline model
+        #     history = [x for x in train]
+        #     predictions = list()
+        #     nb_correct_predict = 0
+        #     for i in range(len(test)):
+        #         # get the history last row as predictions
+        #         predictions.append(history[-1])
+        #         # append the test set to the history
+        #         history.append(test[i])
+        #         # expected price
+        #         expected = history[-1]
+        #         #predicted price
+        #         yhat = predictions[-1]
+        #
+        #         #calculate number of correct trend predictions
+        #         if i != 0:
+        #             if (expected > old_expected) and (yhat > old_yhat):
+        #                 nb_correct_predict = nb_correct_predict+1
+        #             elif (expected < old_expected) and (yhat < old_yhat):
+        #                 nb_correct_predict = nb_correct_predict+1
+        #             elif (expected == old_expected) and (yhat == old_yhat):
+        #                 nb_correct_predict = nb_correct_predict+1
+        #         # print('Date=%s, Predicted=%.2f, Expected=%.2f' % (self.df.index[-12+i], yhat, expected))
+        #         old_yhat = yhat
+        #         old_expected = expected
+        #
+        #     # calculate rmse
+        #     rmse = sqrt(mean_squared_error(test, predictions))
+        #     baselineErr.append(rmse)
+
+        for step in range(1, 10):
+
+            print step
+            supervised = timeseries_to_supervised(X[0], step)
+            supervised_values = supervised.values
+
+            x = supervised_values[:, :step]
+            y = supervised_values[:, step]
+
             # set train and test randomly (using featuer a1)
             msk = np.random.rand(len(self.df['a1'])) < 0.8
-            train = X[0][msk]
-            test = X[0][~msk]
+            x_train = x[msk]
+            y_train = y[msk]
+            x_test = x[~msk]
+            y_test = y[~msk]
+
+            # we create an instance of SVM and fit out data. We do not scale our
+            # data since we want to plot the support vectors
+            C = 1.0
 
 
-            # baseline model
-            history = [x for x in train]
-            predictions = list()
-            nb_correct_predict = 0
-            for i in range(len(test)):
-                # get the history last row as predictions
-                predictions.append(history[-1])
-                # append the test set to the history
-                history.append(test[i])
-                # expected price
-                expected = history[-1]
-                #predicted price
-                yhat = predictions[-1]
+            clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
+            clf.fit(x_train, y_train)
 
-                #calculate number of correct trend predictions
-                if i != 0:
-                    if (expected > old_expected) and (yhat > old_yhat):
-                        nb_correct_predict = nb_correct_predict+1
-                    elif (expected < old_expected) and (yhat < old_yhat):
-                        nb_correct_predict = nb_correct_predict+1
-                    elif (expected == old_expected) and (yhat == old_yhat):
-                        nb_correct_predict = nb_correct_predict+1
-                # print('Date=%s, Predicted=%.2f, Expected=%.2f' % (self.df.index[-12+i], yhat, expected))
-                old_yhat = yhat
-                old_expected = expected
-
-            # calculate rmse
-            rmse = sqrt(mean_squared_error(test, predictions))
-            baselineErr.append(rmse)
-
-            # for step in range(1, 10):
-            # step = 1
-            # # print step
-            # supervised = timeseries_to_supervised(X[0], step)
-            # supervised_values = supervised.values
-            #
-            # x = supervised_values[:, :step]
-            # y = supervised_values[:, step]
-            #
-            # # set train and test randomly (using featuer a1)
-            #
-            # x_train = x[msk]
-            # y_train = y[msk]
-            # x_test = x[~msk]
-            # y_test = y[~msk]
-            #
-            # # we create an instance of SVM and fit out data. We do not scale our
-            # # data since we want to plot the support vectors
-            # C = 1.0
-            #
-            #
-            # clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
-            # clf.fit(x_train, y_train)
-            #
             # pyplot.plot(x_train, y_train, 'o')
             # pyplot.plot(x_train, clf.predict(x_train), 'x')
-            #
-            # predictions = clf.predict(x_test)
-            # rmse = sqrt(mean_squared_error(y_test, predictions))
-            # svmErr.append(rmse)
-            #
-            # clfLinear = svm.SVC(kernel='linear', C=C)
-            # clfLinear.fit(x_train, y_train)
-            #
-            # predictions = clfLinear.predict(x_test)
-            # rmse = sqrt(mean_squared_error(y_test, predictions))
-            # linearSvmErr.append(rmse)
-            #
-            # # create linear regression object
-            # reg = linear_model.LinearRegression()
-            #
-            # # train the model using the training sets
-            # reg.fit(x_train[1:], y_train[1:])
-            # predictions = reg.predict(x_test)
-            #
-            # # pyplot.plot(x_train, reg.predict(x_train), 'y')
-            # # pyplot.show()
-            #
-            # rmse = sqrt(mean_squared_error(y_test, predictions))
+
+            predictions = clf.predict(x_test)
+            rmse = sqrt(mean_squared_error(y_test, predictions))
+            svmErr.append(rmse)
+
+            clfLinear = svm.SVC(kernel='linear', C=C)
+            clfLinear.fit(x_train, y_train)
+
+            predictions = clfLinear.predict(x_test)
+            rmse = sqrt(mean_squared_error(y_test, predictions))
+            linearSvmErr.append(rmse)
+
+            # create linear regression object
+            reg = linear_model.LinearRegression()
+
+            # train the model using the training sets
+            reg.fit(x_train[1:], y_train[1:])
+            predictions = reg.predict(x_test)
+
+            # pyplot.plot(x_train, reg.predict(x_train), 'y')
+            # pyplot.show()
+
+            rmse = sqrt(mean_squared_error(y_test, predictions))
+            baselineErr.append(rmse)
             # linearErr.append(rmse)
 
         # line plot of observed vs predicted
         fig = pyplot.figure(1)
 
-        fig.suptitle('baseline error', fontsize=20)
+        fig.suptitle('baseline error based on time steps to look', fontsize=20)
 
         pyplot.plot(baselineErr, label = 'baseline rmse')
-        pyplot.xlabel('execution number', fontsize=18)
+        pyplot.xlabel('steps', fontsize=18)
         pyplot.ylabel('rmse error', fontsize=18)
 
         # pyplot.plot(svmErr, label = 'svm(rbf kernel) rmse')

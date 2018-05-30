@@ -17,7 +17,7 @@ def timeseries_to_supervised(data, lag=1):
 
 
 # read data from dataset
-dataset_url = 'A_ticker.csv'
+dataset_url = '../data/A_ticker.csv'
 df = pd.read_csv(dataset_url, header=0, parse_dates=[0], index_col=0, squeeze=True)
 
 X = []

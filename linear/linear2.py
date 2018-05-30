@@ -78,16 +78,6 @@ reg.fit(X_train[1:], y_train[1:])
 #rmse = sqrt(mean_squared_error(y_test, predictions))
 #print("rmse : \n",rmse)
 
-# # regression coefficients
-# print('Coefficients: \n', reg.coef_)
-#
-# # variance score: 1 means perfect prediction
-# print('Variance score: {}'.format(reg.score(X_test, y_test)))
-#
-# # plot for residual error
-#
-# # line plot of observed vs predicted
-
 
 # plt.plot(X_train, y_train,label = 'real data  ')
 # plt.show()
@@ -95,11 +85,13 @@ reg.fit(X_train[1:], y_train[1:])
 #
 # plt.show()
 
-# plt.plot(y_test, label='Expected Value')
-# plt.plot(predictions, label='Predicted Value')
-# # pyplot.plot(err, label='rmse')
-# plt.legend()
-# plt.show()
+
+plt.plot(y_test, label='Expected Value')
+plt.plot(predictions, label='Predicted Value')
+plt.legend()
+plt.show()
+
+
 
 # plt.plot(X_train[1:l1], y_train[1:l1], 'o')
 # plt.plot(X_train[l1:l2], y_train[l1:l2], 'x')
