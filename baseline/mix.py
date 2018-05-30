@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn import svm
 from pandas import DataFrame
 from pandas import concat
+from sklearn import datasets, linear_model, metrics
 
 # frame a sequence as a supervised learning problem
 def timeseries_to_supervised(data, lag=1):
@@ -13,7 +14,7 @@ def timeseries_to_supervised(data, lag=1):
     columns = [df.shift(i) for i in range(1, lag + 1)]
     columns.append(df)
     df = concat(columns, axis=1)
-    df.fillna(0, inplace=True)
+    df.fillna(77, inplace=True)
     return df
 
 class baseLineModel :
@@ -45,11 +46,11 @@ class baseLineModel :
         baselineErr = []
         svmErr = []
         linearSvmErr = []
-        for k in range(20):
+        linearErr = []
+        for k in range(1):
             print k
             # set train and test randomly (using featuer a1)
             msk = np.random.rand(len(self.df['a1'])) < 0.8
-
             train = X[0][msk]
             test = X[0][~msk]
 
@@ -108,6 +109,9 @@ class baseLineModel :
             clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
             clf.fit(x_train, y_train)
 
+            pyplot.plot(x_train, y_train, 'o')
+            pyplot.plot(x_train, clf.predict(x_train), 'x')
+
             predictions = clf.predict(x_test)
             rmse = sqrt(mean_squared_error(y_test, predictions))
             svmErr.append(rmse)
@@ -119,17 +123,33 @@ class baseLineModel :
             rmse = sqrt(mean_squared_error(y_test, predictions))
             linearSvmErr.append(rmse)
 
+            # create linear regression object
+            reg = linear_model.LinearRegression()
+
+            # train the model using the training sets
+            reg.fit(x_train[1:], y_train[1:])
+            predictions = reg.predict(x_test)
+
+            pyplot.plot(x_train, reg.predict(x_train), 'y')
+            pyplot.show()
+
+            rmse = sqrt(mean_squared_error(y_test, predictions))
+            linearErr.append(rmse)
+
         # line plot of observed vs predicted
         pyplot.plot(baselineErr, label = 'baseline rmse')
         pyplot.plot(svmErr, label = 'svm(rbf kernel) rmse')
         pyplot.plot(linearSvmErr, label='svm(linear) rmse')
+        pyplot.plot(linearErr, label='linear rmse')
 
         print ("baseline mean %.3f" % np.mean(baselineErr))
         print ("baseline var %.4f" % np.var(baselineErr))
         print ("svm mean %.3f" % np.mean(svmErr))
         print ("svm var %.4f" % np.var(svmErr))
-        print ("lsvm mean %.3f" % np.mean(linearSvmErr))
-        print ("lsvm var %.4f" % np.var(linearSvmErr))
+        print ("Linear  svm mean %.3f" % np.mean(linearSvmErr))
+        print ("Linear  svm var %.4f" % np.var(linearSvmErr))
+        print ("linear mean %.3f" % np.mean(linearErr))
+        print ("linear var %.4f" % np.var(linearErr))
 
         pyplot.legend()
         pyplot.show()
