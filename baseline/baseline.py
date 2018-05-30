@@ -38,7 +38,7 @@ class baseLineModel :
         for i in range (0 ,len(X)):
                 for j in range (1,(X[i].size) - 1) :
                     #print j
-                    if X[i][j] < 2 :
+                    if int(X[i][j]) < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
         # set train and test randomly (using featuer a1)
@@ -54,7 +54,7 @@ class baseLineModel :
 
         supervised = timeseries_to_supervised(X[0], 1)
         supervised_values = supervised.values
-        print supervised_values
+        print (supervised_values)
 
         x = supervised_values[:, :1]
         y = supervised_values[:, 1]
@@ -113,6 +113,8 @@ class baseLineModel :
         # line plot of observed vs predicted
         pyplot.plot(test[-100:], label = 'Expected Value')
         pyplot.plot(predictions[-100:], label = 'Predicted Value')
+        pyplot.xlabel('time', fontsize=18)
+        pyplot.ylabel('b1', fontsize=16)
         pyplot.legend()
         pyplot.show()
 

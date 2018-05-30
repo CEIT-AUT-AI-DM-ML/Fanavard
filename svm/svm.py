@@ -25,13 +25,13 @@ class SvmModel :
     def smodel(self):
 
         #read data from dataset
-        self.dataset_url = '../data/A_ticker.csv'
+        self.dataset_url = '../data/I_ticker.csv'
         self.df = pd.read_csv(self.dataset_url, header=0, parse_dates=[0], index_col=0, squeeze=True)
 
         # add features to X
         X = []
         for i in range(1,9) :
-            s = 'a' +str(i)
+            s = 'i' +str(i)
             #print s
             X.append(self.df[s].values)
 
@@ -42,9 +42,9 @@ class SvmModel :
                     if X[i][j] < 2 :
                         X[i][j] =  ( X[i][j - 1] )
 
-        d = self.df[['a1']]
+        d = self.df[['i1']]
 
-        msk = np.random.rand(len(self.df['a1'])) < 0.8
+        msk = np.random.rand(len(self.df['i1'])) < 0.8
         err = []
 
 
@@ -117,6 +117,8 @@ class SvmModel :
         pyplot.plot(y_test[-100:], label='Expected Value')
         pyplot.plot(predictions[-100:], label='Predicted Value')
         #pyplot.plot(err, label='rmse')
+        pyplot.xlabel('time', fontsize=18)
+        pyplot.ylabel('i1' , fontsize=16)
         pyplot.legend()
         pyplot.show()
 
