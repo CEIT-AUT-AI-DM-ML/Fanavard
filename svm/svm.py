@@ -99,6 +99,7 @@ class SvmModel :
         #     rmse = sqrt(mean_squared_error(y_test, p))
         #     print('RMSE: %.3f' % rmse)
 
+
         #print "finish"
         clf = svm.SVC(kernel='rbf', gamma=0.7, C=C) #svm.SVC(kernel='linear', C=C)
         clf.fit(x_train, y_train)

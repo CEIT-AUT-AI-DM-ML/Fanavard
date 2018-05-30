@@ -47,7 +47,7 @@ class baseLineModel :
         svmErr = []
         linearSvmErr = []
         linearErr = []
-        for k in range(1):
+        for k in range(20):
             print k
             # set train and test randomly (using featuer a1)
             msk = np.random.rand(len(self.df['a1'])) < 0.8
@@ -86,70 +86,77 @@ class baseLineModel :
             baselineErr.append(rmse)
 
             # for step in range(1, 10):
-            step = 1
-            # print step
-            supervised = timeseries_to_supervised(X[0], step)
-            supervised_values = supervised.values
-
-            x = supervised_values[:, :step]
-            y = supervised_values[:, step]
-
-            # set train and test randomly (using featuer a1)
-
-            x_train = x[msk]
-            y_train = y[msk]
-            x_test = x[~msk]
-            y_test = y[~msk]
-
-            # we create an instance of SVM and fit out data. We do not scale our
-            # data since we want to plot the support vectors
-            C = 1.0
-
-
-            clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
-            clf.fit(x_train, y_train)
-
-            pyplot.plot(x_train, y_train, 'o')
-            pyplot.plot(x_train, clf.predict(x_train), 'x')
-
-            predictions = clf.predict(x_test)
-            rmse = sqrt(mean_squared_error(y_test, predictions))
-            svmErr.append(rmse)
-
-            clfLinear = svm.SVC(kernel='linear', C=C)
-            clfLinear.fit(x_train, y_train)
-
-            predictions = clfLinear.predict(x_test)
-            rmse = sqrt(mean_squared_error(y_test, predictions))
-            linearSvmErr.append(rmse)
-
-            # create linear regression object
-            reg = linear_model.LinearRegression()
-
-            # train the model using the training sets
-            reg.fit(x_train[1:], y_train[1:])
-            predictions = reg.predict(x_test)
-
-            pyplot.plot(x_train, reg.predict(x_train), 'y')
-            pyplot.show()
-
-            rmse = sqrt(mean_squared_error(y_test, predictions))
-            linearErr.append(rmse)
+            # step = 1
+            # # print step
+            # supervised = timeseries_to_supervised(X[0], step)
+            # supervised_values = supervised.values
+            #
+            # x = supervised_values[:, :step]
+            # y = supervised_values[:, step]
+            #
+            # # set train and test randomly (using featuer a1)
+            #
+            # x_train = x[msk]
+            # y_train = y[msk]
+            # x_test = x[~msk]
+            # y_test = y[~msk]
+            #
+            # # we create an instance of SVM and fit out data. We do not scale our
+            # # data since we want to plot the support vectors
+            # C = 1.0
+            #
+            #
+            # clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
+            # clf.fit(x_train, y_train)
+            #
+            # pyplot.plot(x_train, y_train, 'o')
+            # pyplot.plot(x_train, clf.predict(x_train), 'x')
+            #
+            # predictions = clf.predict(x_test)
+            # rmse = sqrt(mean_squared_error(y_test, predictions))
+            # svmErr.append(rmse)
+            #
+            # clfLinear = svm.SVC(kernel='linear', C=C)
+            # clfLinear.fit(x_train, y_train)
+            #
+            # predictions = clfLinear.predict(x_test)
+            # rmse = sqrt(mean_squared_error(y_test, predictions))
+            # linearSvmErr.append(rmse)
+            #
+            # # create linear regression object
+            # reg = linear_model.LinearRegression()
+            #
+            # # train the model using the training sets
+            # reg.fit(x_train[1:], y_train[1:])
+            # predictions = reg.predict(x_test)
+            #
+            # # pyplot.plot(x_train, reg.predict(x_train), 'y')
+            # # pyplot.show()
+            #
+            # rmse = sqrt(mean_squared_error(y_test, predictions))
+            # linearErr.append(rmse)
 
         # line plot of observed vs predicted
+        fig = pyplot.figure(1)
+
+        fig.suptitle('baseline error', fontsize=20)
+
         pyplot.plot(baselineErr, label = 'baseline rmse')
-        pyplot.plot(svmErr, label = 'svm(rbf kernel) rmse')
-        pyplot.plot(linearSvmErr, label='svm(linear) rmse')
-        pyplot.plot(linearErr, label='linear rmse')
+        pyplot.xlabel('execution number', fontsize=18)
+        pyplot.ylabel('rmse error', fontsize=18)
+
+        # pyplot.plot(svmErr, label = 'svm(rbf kernel) rmse')
+        # pyplot.plot(linearSvmErr, label='svm(linear) rmse')
+        # pyplot.plot(linearErr, label='linear rmse')
 
         print ("baseline mean %.3f" % np.mean(baselineErr))
         print ("baseline var %.4f" % np.var(baselineErr))
-        print ("svm mean %.3f" % np.mean(svmErr))
-        print ("svm var %.4f" % np.var(svmErr))
-        print ("Linear  svm mean %.3f" % np.mean(linearSvmErr))
-        print ("Linear  svm var %.4f" % np.var(linearSvmErr))
-        print ("linear mean %.3f" % np.mean(linearErr))
-        print ("linear var %.4f" % np.var(linearErr))
+        # print ("svm mean %.3f" % np.mean(svmErr))
+        # print ("svm var %.4f" % np.var(svmErr))
+        # print ("Linear  svm mean %.3f" % np.mean(linearSvmErr))
+        # print ("Linear  svm var %.4f" % np.var(linearSvmErr))
+        # print ("linear mean %.3f" % np.mean(linearErr))
+        # print ("linear var %.4f" % np.var(linearErr))
 
         pyplot.legend()
         pyplot.show()

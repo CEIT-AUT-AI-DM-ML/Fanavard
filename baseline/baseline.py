@@ -14,6 +14,17 @@ def timeseries_to_supervised(data, lag=1):
     df = concat(columns, axis=1)
     df.fillna(77, inplace=True)
     return df
+def difference(dataset, interval=1):
+	diff = list()
+	for i in range(interval, len(dataset)):
+		value = dataset[i] - dataset[i - interval]
+		diff.append(value)
+	return pd.Series(diff)
+
+
+# invert differenced value
+def inverse_difference(history, yhat, interval=1):
+	return yhat + history[-interval]
 
 class baseLineModel :
 
@@ -52,8 +63,9 @@ class baseLineModel :
 
         train = X[0][msk]
 
-        supervised = timeseries_to_supervised(X[0], 1)
+        supervised = difference(timeseries_to_supervised(X[0], 1))
         supervised_values = supervised.values
+
         print supervised_values
 
         x = supervised_values[:, :1]
@@ -61,6 +73,8 @@ class baseLineModel :
 
         x_train = x[msk]
         y_train = y[msk]
+
+
 
         pyplot.plot(x_train,y_train,'o')
         pyplot.show()
