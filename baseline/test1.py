@@ -45,6 +45,8 @@ class pred :
         prefix.append('g')
         prefix.append('h')
         prefix.append('i')
+
+
         for i in range(9):
 
             self.df.append(pd.read_csv(self.dataset_url[i], header=0, parse_dates=[0], index_col=0, squeeze=True))
@@ -52,64 +54,76 @@ class pred :
         # add features to X
         X = []
         for k in range(9):
-            for i in range(1,9) :
-                s = prefix[k] +str(i)
-                X.append(self.df[k][s].values)
+            X.append(self.df[k][prefix[k]+'1'].values)
+
 
         #input_data = pd.read_csv('input.csv', parse_dates=[0], index_col=0, squeeze=True)
+        text_file = open('input.txt', "r")
+        lines = text_file.read().split(',')
+        msize = 638
 
-        data = [50, 51, 32, 43 , 54, 95, 66, 77, 88]
+        x = int(lines[0])
+        for t in range(x):
+            data = []
 
-        for k in range(9):
+            for k in range(9):
 
-            #data[k] = input_data[k*data_size + 1]
-            # remove outliers
-            for i in range (0 ,len(X[k])):
-                    for j in range (1,(X[k][i].size) - 1) :
-                        #print j
-                        if X[k][i][j] < 2 :
-                            X[k][i][j] =  ( X[k][i][j - 1] )
+               adr = t*(msize)*9 + k*msize + 2
+               print lines[adr]
+               data.append(int(lines[adr]))
 
-            step = 1
-            #preparing data
+            print data
+            for k in range(9):
 
-            # chaneg time serie to supervise
-            supervised = timeseries_to_supervised(X[0], step)
-            supervised_values = supervised.values
+                #data[k] = input_data[k*data_size + 1]
+                # remove outliers
+                for i in range (0 ,len(X[k])):
+                    if X[k][i] < 2:
+                        X[k][i] = (X[k][i-1])
 
-            # split data to x and y
-            x = supervised_values[:, :step]
-            y = supervised_values[:, step]
 
-            msk = np.random.rand(len(self.df[k][prefix[k] + '1'])) < 0.8
-            # set train and test randomly (using featuer a1)
-            X_train = x[msk]
-            y_train = y[msk]
-            X_test = x[~msk]
-            y_test = y[~msk]
+                step = 1
+                #preparing data
 
-            #linear model
-            reg = linear_model.LinearRegression()
-            reg.fit(X_train, y_train)
-            err = sqrt(mean_squared_error(y_test, reg.predict(X_test)))
-            model = reg
+                # chaneg time serie to supervise
+                supervised = timeseries_to_supervised(X[k], step)
+                supervised_values = supervised.values
 
-            #svm model
-            C = 1.0
-            clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
-            clf.fit(X_train, y_train)
-            tmp_err = sqrt(mean_squared_error(y_test, clf.predict(X_test)))
+                # split data to x and y
+                x = supervised_values[:, :step]
+                y = supervised_values[:, step]
 
-            if tmp_err < err:
-                model = clf
+                msk = np.random.rand(len(self.df[k][prefix[k] + '1'])) < 0.8
+                # set train and test randomly (using featuer a1)
+                X_train = x[msk]
+                y_train = y[msk]
+                X_test = x[~msk]
+                y_test = y[~msk]
 
-            pdata = np.array(data[k])
+                #linear model
+                reg = linear_model.LinearRegression()
+                reg.fit(X_train, y_train)
+                err = sqrt(mean_squared_error(y_test, reg.predict(X_test)))
+                model = reg
 
-            print 'for ', prefix[k]
-            for i in range(5):
-               pred =  model.predict(pdata.reshape(1, -1))
-               pdata = pred
-               print pred
+                #svm model
+                C = 1.0
+                clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)  # svm.SVC(kernel='linear', C=C)
+                clf.fit(X_train, y_train)
+                tmp_err = sqrt(mean_squared_error(y_test, clf.predict(X_test)))
+
+                if tmp_err < err:
+                    #print tmp_err
+                    model = clf
+
+
+                pdata = np.array(data[k])
+
+                print 'for ', prefix[k]
+                for i in range(5):
+                   pred =  model.predict(pdata.reshape(1, -1))
+                   pdata = pred
+                   print pred
 
 if __name__ == "__main__":
     tst = pred()
