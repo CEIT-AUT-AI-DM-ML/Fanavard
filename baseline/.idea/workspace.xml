@@ -21,8 +21,8 @@
       <file leaf-file-name="baseline.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baseline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="34">
+              <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -33,11 +33,21 @@
       <file leaf-file-name="svm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../svm/svm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="107" column="40" lean-forward="false" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+            <state relative-caret-position="1870">
+              <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="54" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,8 +55,8 @@
       <file leaf-file-name="linear2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../linear/linear2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="809">
-              <caret line="137" column="14" lean-forward="false" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
+            <state relative-caret-position="510">
+              <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -54,34 +64,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mix.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="167" column="0" lean-forward="true" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <marker date="1527713774072" expanded="true" signature="1535:1584" ph="..." />
+                <element signature="e#1163#1327#0" expanded="false" />
+                <element signature="e#1220#1327#0" expanded="false" />
+                <element signature="e#3984#4052#0" expanded="false" />
+                <element signature="e#4293#4329#0" expanded="false" />
+                <element signature="e#4569#4612#0" expanded="false" />
+                <element signature="e#5107#5156#0" expanded="false" />
+                <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/indexes/base.py">
+      <file leaf-file-name="normal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../normal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81260">
-              <caret line="2443" column="0" lean-forward="false" selection-start-line="2443" selection-start-column="0" selection-end-line="2443" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="internals.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/internals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119646">
-              <caret line="3589" column="0" lean-forward="false" selection-start-line="3589" selection-start-column="0" selection-end-line="3589" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,9 +114,11 @@
         <option value="$PROJECT_DIR$/svm.py" />
         <option value="$PROJECT_DIR$/../linear/linear_regression.py" />
         <option value="$PROJECT_DIR$/baseline.py" />
+        <option value="$PROJECT_DIR$/../svm/svm.py" />
         <option value="$PROJECT_DIR$/../linear/linear2.py" />
         <option value="$PROJECT_DIR$/mix.py" />
-        <option value="$PROJECT_DIR$/../svm/svm.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/test1.py" />
       </list>
     </option>
   </component>
@@ -136,6 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -151,31 +159,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../linear/linear2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../normal.py" />
   </component>
-  <component name="RunManager" selected="Python.mix">
-    <configuration default="false" name="linear_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../linear" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="baseline" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../linear/linear_regression.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.test1">
     <configuration default="false" name="mix" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -189,23 +179,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="baseline" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mix.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="svm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../svm" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="baseline" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../svm/svm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -227,7 +200,49 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="baseline" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Nosetest test.test" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="baseline" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetest test1.test1" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="baseline" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test1.py" />
+      <option name="CLASS_NAME" value="test1" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -239,7 +254,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="baseline" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baseline.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -379,19 +394,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.linear_regression" />
-      <item index="1" class="java.lang.String" itemvalue="Python.mix" />
-      <item index="2" class="java.lang.String" itemvalue="Python.svm (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.linear2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.baseline" />
+      <item index="0" class="java.lang.String" itemvalue="Python.mix" />
+      <item index="1" class="java.lang.String" itemvalue="Python.linear2" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest test.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetest test1.test1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.mix" />
-        <item index="1" class="java.lang.String" itemvalue="Python.linear2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.baseline" />
-        <item index="3" class="java.lang.String" itemvalue="Python.svm (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.linear_regression" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest test1.test1" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest test.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.mix" />
+        <item index="4" class="java.lang.String" itemvalue="Python.linear2" />
       </list>
     </recent_temporary>
   </component>
@@ -408,6 +423,17 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Nosetest_test1_test1 - 2018.05.31 at 17h 55m 28s.xml">
+      <configuration name="Nosetest test1.test1" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_test_test - 2018.05.31 at 17h 53m 54s.xml">
+      <configuration name="Nosetest test.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetest_test_test - 2018.05.31 at 17h 54m 10s.xml">
+      <configuration name="Nosetest test.test" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -419,14 +445,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2186" height="1386" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17194143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951543" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -448,6 +474,121 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/baseline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3944">
+          <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../svm/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3400">
+          <caret line="107" column="40" lean-forward="false" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../linear/linear2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5406">
+          <caret line="181" column="8" lean-forward="false" selection-start-line="181" selection-start-column="8" selection-end-line="186" selection-end-column="48" />
+          <folding>
+            <element signature="e#1163#1327#0" expanded="false" />
+            <element signature="e#1220#1327#0" expanded="false" />
+            <element signature="e#3984#4052#0" expanded="false" />
+            <element signature="e#4293#4329#0" expanded="false" />
+            <element signature="e#4569#4612#0" expanded="false" />
+            <element signature="e#5107#5156#0" expanded="false" />
+            <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../normal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baseline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../svm/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3638">
+          <caret line="107" column="40" lean-forward="false" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../linear/linear2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4658">
+          <caret line="137" column="14" lean-forward="false" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1163#1327#0" expanded="false" />
+            <element signature="e#1220#1327#0" expanded="false" />
+            <element signature="e#3984#4052#0" expanded="false" />
+            <element signature="e#4293#4329#0" expanded="false" />
+            <element signature="e#4569#4612#0" expanded="false" />
+            <element signature="e#5107#5156#0" expanded="false" />
+            <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83062">
+          <caret line="2443" column="0" lean-forward="false" selection-start-line="2443" selection-start-column="0" selection-end-line="2443" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/internals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122026">
+          <caret line="3589" column="0" lean-forward="false" selection-start-line="3589" selection-start-column="0" selection-end-line="3589" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/baseline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -483,8 +624,13 @@
         <state relative-caret-position="4556">
           <caret line="142" column="51" lean-forward="true" selection-start-line="142" selection-start-column="51" selection-end-line="142" selection-end-column="51" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1527713774072" expanded="true" signature="1535:1584" ph="..." />
+            <element signature="e#1163#1327#0" expanded="false" />
+            <element signature="e#1220#1327#0" expanded="false" />
+            <element signature="e#3984#4052#0" expanded="false" />
+            <element signature="e#4293#4329#0" expanded="false" />
+            <element signature="e#4569#4612#0" expanded="false" />
+            <element signature="e#5107#5156#0" expanded="false" />
+            <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
           </folding>
         </state>
       </provider>
@@ -501,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122026">
           <caret line="3589" column="0" lean-forward="false" selection-start-line="3589" selection-start-column="0" selection-end-line="3589" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -540,8 +685,13 @@
         <state relative-caret-position="4488">
           <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1527713774072" expanded="true" signature="1535:1584" ph="..." />
+            <element signature="e#1163#1327#0" expanded="false" />
+            <element signature="e#1220#1327#0" expanded="false" />
+            <element signature="e#3984#4052#0" expanded="false" />
+            <element signature="e#4293#4329#0" expanded="false" />
+            <element signature="e#4569#4612#0" expanded="false" />
+            <element signature="e#5107#5156#0" expanded="false" />
+            <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
           </folding>
         </state>
       </provider>
@@ -558,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122026">
           <caret line="3589" column="0" lean-forward="false" selection-start-line="3589" selection-start-column="0" selection-end-line="3589" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -587,8 +736,13 @@
         <state relative-caret-position="4080">
           <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1527713774072" expanded="true" signature="1535:1584" ph="..." />
+            <element signature="e#1163#1327#0" expanded="false" />
+            <element signature="e#1220#1327#0" expanded="false" />
+            <element signature="e#3984#4052#0" expanded="false" />
+            <element signature="e#4293#4329#0" expanded="false" />
+            <element signature="e#4569#4612#0" expanded="false" />
+            <element signature="e#5107#5156#0" expanded="false" />
+            <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
           </folding>
         </state>
       </provider>
@@ -630,60 +784,88 @@
     <entry file="file://$PROJECT_DIR$/../anfis/anfis/anfis/tests.py" />
     <entry file="file://$PROJECT_DIR$/svm.py" />
     <entry file="file://$PROJECT_DIR$/../linear/linear_regression.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/indexes/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81260">
-          <caret line="2443" column="0" lean-forward="false" selection-start-line="2443" selection-start-column="0" selection-end-line="2443" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/internals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119646">
           <caret line="3589" column="0" lean-forward="false" selection-start-line="3589" selection-start-column="0" selection-end-line="3589" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="2443" column="0" lean-forward="false" selection-start-line="2443" selection-start-column="0" selection-end-line="2443" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/baseline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../normal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../linear/linear2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="137" column="14" lean-forward="false" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
+        <state relative-caret-position="510">
+          <caret line="92" column="22" lean-forward="true" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <folding>
+            <element signature="e#1163#1327#0" expanded="false" />
+            <element signature="e#1220#1327#0" expanded="false" />
+            <element signature="e#3984#4052#0" expanded="false" />
+            <element signature="e#4293#4329#0" expanded="false" />
+            <element signature="e#4569#4612#0" expanded="false" />
+            <element signature="e#5107#5156#0" expanded="false" />
+            <marker date="1527770372327" expanded="false" signature="1509:1558" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../svm/svm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="107" column="40" lean-forward="false" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+        <state relative-caret-position="1870">
+          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="54" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mix.py">
+    <entry file="file://$PROJECT_DIR$/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="167" column="0" lean-forward="true" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1527713774072" expanded="true" signature="1535:1584" ph="..." />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
