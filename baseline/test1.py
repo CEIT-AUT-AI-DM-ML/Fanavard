@@ -45,7 +45,7 @@ class pred :
         prefix.append('g')
         prefix.append('h')
         prefix.append('i')
-        for i in range(2):
+        for i in range(9):
 
             self.df.append(pd.read_csv(self.dataset_url[i], header=0, parse_dates=[0], index_col=0, squeeze=True))
 
@@ -56,15 +56,15 @@ class pred :
                 s = prefix[k] +str(i)
                 X.append(self.df[k][s].values)
 
-        input_data = pd.read_csv('input.csv', parse_dates=[0], index_col=0, squeeze=True)
+        #input_data = pd.read_csv('input.csv', parse_dates=[0], index_col=0, squeeze=True)
 
-        data = []
-        data_size = 639
-        for k in range(2):
+        data = [50, 51, 32, 43 , 54, 95, 66, 77, 88]
 
-            data[k] = input_data[k*data_size + 1]
+        for k in range(9):
+
+            #data[k] = input_data[k*data_size + 1]
             # remove outliers
-            for i in range (0 ,len(X)):
+            for i in range (0 ,len(X[k])):
                     for j in range (1,(X[k][i].size) - 1) :
                         #print j
                         if X[k][i][j] < 2 :
@@ -103,11 +103,11 @@ class pred :
             if tmp_err < err:
                 model = clf
 
-            pdata = data[k]
+            pdata = np.array(data[k])
 
             print 'for ', prefix[k]
             for i in range(5):
-               pred =  model.predict(pdata)
+               pred =  model.predict(pdata.reshape(1, -1))
                pdata = pred
                print pred
 

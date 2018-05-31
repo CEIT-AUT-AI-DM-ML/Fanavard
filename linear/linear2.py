@@ -77,6 +77,7 @@ reg1.fit(X_train, y_train)
 print sqrt(mean_squared_error(y_test, reg1.predict(X_test)))
 
 pin = x[len(x)-1]
+print type(pin)
 for j in range(step - 1):
     pin[j] = pin[j + 1]
 pin[step-1] = y[len(y) - 1]
